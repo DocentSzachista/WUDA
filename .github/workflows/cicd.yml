@@ -5,6 +5,18 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+      POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+      POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+      POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
+      PORT: ${{ secrets.PORT }}
+      APP_PORT: ${{ secrets.APP_PORT }}
+      JWT_KEY: ${{ secrets.JWT_KEY }}
+      BACKEND_HOSTNAME: ${{ secrets.BACKEND_HOSTNAME }}
+      BACKEND_PORT: ${{ secrets.BACKEND_PORT }}
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      SERVER_PORT: ${{ secrets.SERVER_PORT }}
     steps:
       - name: Get code
         uses: actions/checkout@v5
