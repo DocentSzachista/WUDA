@@ -40,6 +40,6 @@ jobs:
         run: ruff check --output-format=github front-end/
         continue-on-error: true
       - name: Run backend tests
-        run: pytest back-end/test_app
+        run: pytest back-end/test_app.py
       - name: Run frontend tests
-        run: pytest front-end/test_app
+        run: pytest front-end/test_app.py
