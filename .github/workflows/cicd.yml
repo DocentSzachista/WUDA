@@ -65,6 +65,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GH_TOKEN }}
+
       #https://docs.github.com/en/actions/tutorials/publish-packages/publish-docker-images
       - name: Extract metadata for backend
         id: meta-backend
@@ -90,3 +91,4 @@ jobs:
           file: ./front-end/Dockerfile
           push: true
           tags: ${{ steps.meta-frontend.outputs.tags }}
+
